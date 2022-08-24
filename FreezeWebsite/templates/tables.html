@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="de-de">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="keywords" content="Mario Kart Competetive, MK Competetive, MK8 Competetive, MK8D Competetive, MK8DX Competetive, Mario Kart 8 Competetive, Mario Kart 8 Deluxe Competeive, MK Comp, MK8 Comp, MK8D Comp, MK8DX Comp, Freeze, FreeezeMK8, FRZ">
+        <meta name="description" content="Freeze (FRZ) - A Mario Kart 8 Deluxe Competetive Team!">
+        <meta name="author" content="ErikMK8">
+        <meta name="robots" content="home, unfollow">
+        <title>Website of FRZ</title>
+        <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+        <script src="{{ url_for('static', filename='script/script.js') }}"></script>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/style.css') }}" />
+    </head>
+    
+    <body>
+        <nav class="navbar sticky-top navbar-expand navbar-dark">
+            <img class="frzlogonavtables" src="{{ url_for('static', filename='/images/transparent-frz-logo.png') }}" alt="FRZ Logo" />
+            <div class="container-fluid">
+
+                <input id="menu__toggle" type="checkbox" />
+                <label class="menu__btn" for="menu__toggle">
+                  <span></span>
+                </label>
+
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="{{ url_for('to_home') }}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('to_about') }}">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('to_our_members') }}">Our Members</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="{{ url_for('to_tables') }}">Tables</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('to_news') }}">News</a></li>
+                    {% if current_user.is_authenticated %}
+                    <li class="nav-item"><a class="nav-link Admin" href="{{ url_for('to_admin') }}">Admin</a></li>
+                    {% endif %}
+                    <li class="nav-item"><a class="nav-link nav-impressum" href="{{ url_for('to_impressum') }}">Impressum</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <img class="arrow" id="arrow" src="{{ url_for('static', filename='/images/arrow.png') }}" onclick="FilterBar()">
+
+        <div class="FilterBar" id="FilterBar">
+            <form method="POST" action="{{ url_for('tables', formID='FilterTables') }}">
+                <ul class="FilterUl">
+                    <li class="descriptionFilterBar">
+                        <p>Filters</p>
+                    </li>
+                    <li class="ListItem">
+                        <div class="dropdown">
+                            <label class="dropdownlabel1" for="touch1"><div class="TeamDd DdHeader"><div><p class="Team">Team</p></div></div></label>
+                            <input type="checkbox" class="touch" id="touch1" onchange="dropdown1(this)">
+                            <div class="slide" id="slide1">
+                                <div class="DdOption defaultcheck Freeze1"><p>Freeze 1</p><p><input class="defaultcheckinput" type="checkbox" name="TeamFRZ1" {{ settings[0] }}></p></div>
+                                <div class="DdOption defaultcheck Freeze2"><p>Freeze 2</p><p><input class="defaultcheckinput" type="checkbox" name="TeamFRZ2" {{ settings[1] }}></p></div>
+                                <div class="DdOption defaultcheck FreezeMixed"><p>Mixed</p><p><input class="defaultcheckinput" type="checkbox" name="TeamMixed" {{ settings[2] }}></p></div>
+                                <div class="DdOption defaultcheck OldFreeze"><p>Old Freeze</p><p><input class="defaultcheckinput" type="checkbox" name="OldFreeze" {{ settings[3] }}></p></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="ListItem">
+                        <div class="dropdown">
+                            <label class="dropdownlabel2" for="touch2"><div class="TeamDd DdHeader"><div><p class="Opponent">Opponent</p></div></div></label>
+                            <input type="checkbox" class="touch" id="touch2" onchange="dropdown2(this)" onclick="checkselectall1()">
+                            <div class="slide" id="slide2">
+                                <div class="DdOption defaultcheck itemall1"><p>Next N</p><p><input class="defaultcheckinput itemallinput1"  type="checkbox" onchange="checkselectall1()" name="OpponentNN" {{ settings[4] }}></p></div>
+                                <div class="DdOption defaultcheck itemall1"><p>Encore</p><p><input class="defaultcheckinput itemallinput1"  type="checkbox" onchange="checkselectall1()" name="OpponentEn"  {{ settings[5] }}></p></div>
+                                <div class="DdOption defaultcheck itemall1"><p>NANA</p><p><input class="defaultcheckinput itemallinput1"  type="checkbox" onchange="checkselectall1()" name="OpponentNANA" {{ settings[6] }}></p></div>
+                                <div class="DdOption defaultcheck itemall1"><p>Enlightment</p><p><input class="defaultcheckinput itemallinput1" type="checkbox" onchange="checkselectall1()" name="OpponentEt" {{ settings[7] }}></p></div>
+                                <div class="DdOption defaultcheck itemall1"><p>LTG</p><p><input class="defaultcheckinput itemallinput1"  type="checkbox" onchange="checkselectall1()" name="OpponentLTG" {{ settings[8] }}></p></div>
+                                <div class="DdOption defaultcheck itemall1"><p>HTS / 187</p><p><input class="defaultcheckinput itemallinput1"  type="checkbox" onchange="checkselectall1()" name="OpponentHTS" {{ settings[9] }}></p></div>
+                                <div class="DdOption defaultcheck itemall1"><p>Other</p><p><input class="defaultcheckinput itemallinput1"  type="checkbox" onchange="checkselectall1()" name="OpponentOther" {{ settings[10] }}></p></div>
+                                <div class="DdOption defaultcheck"><p>Select All</p><p><input class="defaultcheckinput" id="all1" type="checkbox" onclick="selectall1()"></p></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="ListItem">
+                         <div class="dropdown">
+                            <label class="dropdownlabel3" for="touch3"><div class="TeamDd DdHeader"><div><p class="Timespan">Timespan</p></div></div> </label>
+                            <input type="checkbox" class="touch" id="touch3" onchange="dropdown3(this)">
+                            <div class="slide" id="slide3">
+                                <div class="DdOption DdDate">
+                                    <label for="from">From:</label>
+                                    <input class="DdDateInput" name="TimespanFrom" type="date" id="from" min="2020-08-29" required>
+                                </div>
+                                <div class="DdOption DdDate">
+                                    <label for="to">To:</label>
+                                    <input class="DdDateInput" type="date" id="to" name="TimespanTo" min="2020-08-29" required>
+                                </div>
+                            </div>
+                         </div>
+                    </li>
+                    <li class="ListItem">
+                        <div class="dropdown">
+                            <label class="dropdownlabel4" for="touch4"><div class="TeamDd DdHeader"><div><p class="Type">Type</p></div></div></label>
+                            <input type="checkbox" class="touch" id="touch4" onchange="dropdown4(this)" onclick="checkselectall2()">
+                            <div class="slide" id="slide4">
+                                <div class="dropdown-content">
+                                    <div class="DdOption defaultcheck itemall2"><p>200 League</p><p><input class="defaultcheckinput itemallinput2" type="checkbox" onchange="checkselectall2()" name="Type200L"  {{ settings[13] }}></p></div>
+                                    <div class="DdOption defaultcheck itemall2"><p>Scrimmage</p><p><input class="defaultcheckinput itemallinput2" type="checkbox" onchange="checkselectall2()" name="TypeScrimm" {{ settings[14] }}></p></div>
+                                    <div class="DdOption defaultcheck itemall2"><p>Inclan</p><p><input class="defaultcheckinput itemallinput2" type="checkbox" onchange="checkselectall2()" name="TypeInclan" {{ settings[15] }}></p></div>
+                                    <div class="DdOption defaultcheck itemall2"><p>150 War</p><p><input class="defaultcheckinput itemallinput2" type="checkbox" onchange="checkselectall2()" name="Type150" {{ settings[16] }}></p></div>
+                                    <div class="DdOption defaultcheck"><p>Select All</p><p><input class="defaultcheckinput itemallinput2"  type="checkbox" id="all2" onclick="selectall2()"></p></div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="ListItem">
+                        <div class="dropdown">
+                            <div class="TeamDd DdHeader"><label class="dropdownlabel5" for="touch5"><p class="Type">Result</p></label></div>
+                            <input type="checkbox" class="touch" id="touch5" onchange="dropdown5(this)" onclick="checkselectall3()">
+                            <div class="slide" id="slide5">
+                                <div class="dropdown-content">
+                                    <div class="DdOption itemall3 Win"><p>Win</p><p><input class="defaultcheckinput itemallinput3" type="checkbox" onchange="checkselectall3()" name="ResultWin" {{ settings[17] }}></p></div>
+                                    <div class="DdOption itemall3 Loss"><p>Tie</p><p><input class="defaultcheckinput itemallinput3" type="checkbox" onchange="checkselectall3()" name="ResultTie" {{ settings[18] }}></p></div>
+                                    <div class="DdOption itemall3 Tie"><p>Loss</p><p><input class="defaultcheckinput itemallinput3" type="checkbox" onchange="checkselectall3()" name="ResultLoss" {{ settings[19] }}></p></div>
+                                    <div class="DdOption defaultcheck All" ><p>Select All</p><p><input class="defaultcheckinput itemallinput3" type="checkbox" id="all3" onclick="selectall3()" ></p></div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="ListItem">
+                        <div class="dropdown">
+                            <label class="dropdownlabel6" for="touch6"><div class="TeamDd DdHeader"><div><p class="Orders">Orders</p></div></div></label>
+                            <input type="checkbox" class="touch" id="touch6" onchange="dropdown6(this)">
+                            <div class="slide" id="slide6">
+                                <div class="dropdown-content">
+                                    <div class="DdOption defaultcheck"><p>Newest</p><p><input id="order#1" class="defaultcheckinput OrderElem" type="checkbox" onchange="orderonlyone(this)" name="OrderNewest" {{ settings[20] }}></p></div>
+                                    <div class="DdOption"><p>Oldest</p><p><input id="order#2" class="OrderElem" type="checkbox" onchange="orderonlyone(this)" name="OrderOldest" {{ settings[21] }}></p></div>
+                                    <div class="DdOption"><p>Best</p><p><input id="order#3" class="OrderElem" type="checkbox" onchange="orderonlyone(this)" name="OrderBest" {{ settings[22] }}></p></div>
+                                    <div class="DdOption"><p>Worst</p><p><input id="order#4" class="OrderElem" type="checkbox" onchange="orderonlyone(this)" name="OrderWorst" {{ settings[23] }}></p></div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <input type="submit" value="Use this Filters">
+                    </li>
+                </ul>
+            </form>
+        </div>
+
+        <script>
+            function setdate()
+            {
+                document.getElementById("from").defaultValue = "{{ settings[11] }}";
+                document.getElementById("to").defaultValue = "{{ settings[12] }}";
+            }
+            setdate()
+        </script>
+        {% if table == 'Tables' %}
+            <p class="TablesAmount">{{ amount }} Tables</p>
+        {% endif %}
+        <div class="Tables">
+        {% if table == 'Tables' %}
+            {% for i in tables %}
+            <a href="static/{{ i }}" target="_blank"><img src="{{ url_for('static', filename=i) }}" class="TableImage"></a>
+            {% endfor %}
+        {% else %}
+            <p class="TablesP">No Tables with this Filter! Change it to something different</p>
+        {% endif %}
+        </div>
+        
+        <div class="Footline">
+            <ul class="FootUl">
+                <li class="NavItemLi"><a class="NavItem" href="https://twitter.com/FreezeMk8" target="_blank"><img class="Footerimg" class="FooterimgTwitter" src="{{ url_for('static', filename='/images/twitter.png') }}" alt="Twitter logo linking to our Twitter page"></a></li>
+                <li class="NavItemLi"><a class="NavItem" href="https://www.youtube.com/channel/UCTl0otMfo92P_22cHAczAng" target="_blank"><img class="Footerimg" src="{{ url_for('static', filename='/images/youtube.png') }}" alt="Youtube logo linking to out yt channel"></a></li>
+                <li class="NavItemLi"><a class="NavItem" href="https://twitch.tv/freezemktv1" target="_blank"><img class="Footerimg" src="{{ url_for('static', filename='/images/twitch.png') }}" alt="Twitch logo linking to our Twitch channel"></a></li>
+                <li class="NavItemLi"><a class="NavItem" href="https://discord.com" target="_blank"><img class="Footerimg" src="{{ url_for('static', filename='/images/discord.png') }}" alt="Discord Logo Linking to our discord"></a></li>
+                <li class="NavItemLi"><a class="NavItem" href="https://www.mariokartcentral.com/mkc/registry/teams/1008" target="_blank"><img class="Footerimg" src="{{ url_for('static', filename='/images/mkcentral-white.png') }}" alt="mkcentral logo linking to our mkcentral teampage"></a></li>
+                <li><a class="NavItemImpressum" href="{{ url_for('to_impressum') }}">Impressum</a></li>
+            </ul>
+        </div>
+    </body>
+</html>

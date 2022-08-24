@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="de-de">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="keywords" content="Mario Kart Competetive, MK Competetive, MK8 Competetive, MK8D Competetive, MK8DX Competetive, Mario Kart 8 Competetive, Mario Kart 8 Deluxe Competeive, MK Comp, MK8 Comp, MK8D Comp, MK8DX Comp, Freeze, FreeezeMK8, FRZ">
+        <meta name="description" content="Freeze (FRZ) - A Mario Kart 8 Deluxe Competetive Team!">
+        <meta name="author" content="ErikMK8">
+        <meta name="robots" content="home, unfollow">
+        <title>Website of FRZ</title>
+        <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/style.css') }}" />
+    </head>
+    <body>
+        <header>
+            <img class="img-fluid" src="{{ url_for('static', filename='/images/Banner.png') }}" alt="Banner" />
+        </header>
+        <nav class="navbar sticky-top navbar-expand navbar-dark">
+            <img class="navbar-brand navimg" id="navimage" src="{{ url_for('static', filename='/images/transparent-frz-logo.png') }}" alt="FRZ Logo" />
+            <img class="navlogo-default-hidden" src="{{ url_for('static', filename='/images/transparent-frz-logo.png') }}" alt="FRZ Logo" />
+            <div class="container-fluid">
+
+                <input id="menu__toggle" type="checkbox" />
+                <label class="menu__btn" for="menu__toggle">
+                  <span></span>
+                </label>
+
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" aria-current="page" href="{{ url_for('to_home') }}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('to_about') }}">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('to_our_members') }}">Our Members</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('to_tables') }}">Tables</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('to_news') }}">News</a></li>
+                    {% if current_user.is_authenticated %}
+                    <li class="nav-item"><a class="nav-link Admin" href="{{ url_for('to_admin') }}">Admin</a></li>
+                    {% endif %}
+                    <li class="nav-item"><a class="nav-link nav-impressum active" href="{{ url_for('to_impressum') }}">Impressum</a></li>
+                </ul>
+            </div>
+        </nav>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"
+        ></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+        <script src="./script.js"></script>
+
+        <div class="ImpressumInformation">
+            <p>Site Created by Erik, published on the th, 2022</p>
+            <p>Leaders of Freeze: Squadling, SKaR, Erik, YoshiSkyBlue</p>
+            <p>Contact: Discord Erik#8036 or E-Mail erikw.mk8@gmail.com</p>
+        </div>
+
+        <div class="Footline">
+            <ul class="FootUl">
+                <li class="NavItemLi"><a class="NavItem" href="https://twitter.com/FreezeMk8" target="_blank"><img class="Footerimg" class="FooterimgTwitter" src="{{ url_for('static', filename='/images/twitter.png') }}" alt="Twitter logo linking to our Twitter page"></a></li>
+                <li class="NavItemLi"><a class="NavItem" href="https://www.youtube.com/channel/UCTl0otMfo92P_22cHAczAng" target="_blank"><img class="Footerimg" src="{{ url_for('static', filename='/images/youtube.png') }}" alt="Youtube logo linking to out yt channel"></a></li>
+                <li class="NavItemLi"><a class="NavItem" href="https://twitch.tv/freezemktv1" target="_blank"><img class="Footerimg" src="{{ url_for('static', filename='/images/twitch.png') }}" alt="Twitch logo linking to our Twitch channel"></a></li>
+                <li class="NavItemLi"><a class="NavItem" href="https://discord.com" target="_blank"><img class="Footerimg" src="{{ url_for('static', filename='/images/discord.png') }}" alt="Discord Logo Linking to our discord"></a></li>
+                <li class="NavItemLi"><a class="NavItem" href="https://www.mariokartcentral.com/mkc/registry/teams/1008" target="_blank"><img class="Footerimg" src="{{ url_for('static', filename='/images/mkcentral-white.png') }}" alt="mkcentral logo linking to our mkcentral teampage"></a></li>
+                <li><a class="NavItemImpressum" href="{{ url_for('to_impressum') }}">Impressum</a></li>
+            </ul>
+        </div>
+    </body>
+</html>

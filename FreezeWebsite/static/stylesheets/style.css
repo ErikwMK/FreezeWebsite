@@ -1,0 +1,957 @@
+body
+{
+    background-color: rgb(255, 255, 255);
+}
+
+.navimg {
+    margin-top: -100px;
+    margin-left: 10px;
+    width: 10%;
+    transition: all 0.5s ease-in-out;
+}
+
+img.downScroll {
+    width: 30px;
+    margin-top: 0;
+}
+
+
+.frzlogonavtables
+{
+    height: 2em;
+    padding-left: 1em;
+}
+
+.navlogo-default-hidden
+{
+    display: none;
+}
+
+.navbar
+{
+    background-color: #48dcff
+}
+
+#menu__toggle
+{
+    display: none;
+}
+.menu__btn
+{
+    display: none;
+}
+
+.nav-impressum
+{
+    display: none;
+}
+
+
+.TeamUl
+{
+    list-style-type: none;
+
+}
+.HomeText
+{
+    font-size: 2em;
+    font-weight: 600;
+    color: gray;
+    padding-top: .8em;
+}
+.TeamLogo
+{
+    border-style: solid;
+    border-color: black;
+    border-radius: 7%;
+    background-color: black;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 2em 6em;
+    width: 22em;
+    height: auto;
+
+}
+.TeamBanner
+{
+    border-style: solid;
+    border-color: black;
+    border-radius: 4%;
+    background-color: black;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 2em 6em;
+    max-width: 55em;
+    height: auto;
+
+}
+.Teams
+{
+    padding-top: 2em;
+    display: flex;
+    vertical-align: flex-start;
+    gap: 1em 4em;
+    margin-right: 5%;
+    margin-left: 5%;
+    flex-wrap: wrap;
+}
+
+
+.Footline
+{
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    background-color: #f8dcff;
+    z-index: 2000;
+}
+.FootUl
+{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #222;
+    font-family: sans-serif;
+    z-index: 2000;
+}
+.NavItem
+{
+    color: white;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    padding: 1em;
+
+}
+.NavItemLi
+{
+    float: left;
+
+}
+
+.Footerimg
+{
+    height: 1.36em;
+
+}
+.NavItemImpressum:hover
+{
+    color: #D1F6FF;
+    height: 1.5em;
+    text-decoration: none;
+}
+.NavItemImpressum
+{
+    height: 1.5em;
+    text-decoration: none;
+    color: white;
+    float: right;
+    padding-right: 1em;
+    padding-top: 1em;
+}
+
+
+.TrennstrichHome
+{
+    margin-left: 4em;
+    margin-right: 4em;
+    margin-top: 6em;
+    margin-bottom: 2em;
+    padding-top: 4px;
+    border-radius: 30%;
+}
+
+.SocialmediaBlock
+{
+    padding-top: 3em;
+    margin-bottom: 10em;
+    margin-left: 2em;
+}
+.SmUl
+{
+    list-style-type: none;
+    font-size: 1em;
+}
+.SmLiImg
+{
+    height: 1.8em;
+    display: inline;
+}
+.SmLiTxt
+{
+    display: inline;
+
+}
+.SmLiItem
+{
+    padding-top: .8em;
+
+}
+.SmLiItem a
+{
+    color:black;
+    text-decoration: none;
+}
+.SmTwitter
+{
+    padding-right: .7em;
+
+}
+.SmYT
+{
+    padding-right: .25em;
+
+}
+.SmTwitch
+{
+    padding-left: .2em;
+    padding-right: .85em;
+}
+.SmDc
+{
+    padding-right: .37em;
+
+}
+.SmMKC
+{
+    padding-right: .52em;
+    height: 2.5em;
+}
+
+
+.AboutDiv
+{
+    margin-bottom: 3em;
+
+}
+.about
+{
+    margin-right: 4em;
+    margin-left: 4em;
+    word-wrap: break-word;
+    margin-bottom: 0em;
+    text-align: justify;
+}
+.abouttop
+{
+    margin-top: 2em;
+
+}
+
+.aboutbottom
+{
+    margin-bottom: 2em;
+
+}
+
+
+.Members
+{
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 4em;
+    margin-bottom: 5em;
+    display: flex;
+    list-style: none;
+    justify-content: left;
+    align-items: stretch;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    gap: 2em;
+}
+.MemberSet
+{
+    width: 20em;
+
+}
+.MemberMii
+{
+    position: absolute;
+    padding-top: .5em;
+    height: 11em;
+    width: auto;
+    z-index: 1002;
+    padding-bottom: 0.8em;
+    padding-left: 6em;;
+}
+.MemberFlag
+{
+    z-index: 1000;
+    border-style: solid;
+    border-width: .5em;
+    border-radius: 4%;
+    padding-bottom: 2em;
+    border-color: #111;
+    background-color: #111;
+    width: 20em;
+    height: 12.5em;
+}
+.MemberName
+{
+    z-index: 1001;
+    position: absolute;
+    padding-top: 6.7em;
+    padding-left: .6em;
+    font-size: 1.5em;
+    z-index: 1001;
+}
+.Member
+{
+    display: flex;
+    list-style: none;
+    justify-content: left;
+    align-items: stretch;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    gap: .5em 1em;
+}
+.TextMembers
+{
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-top: -1.5em;
+    padding-left: 1em;
+    font-size: 2em;
+    color: gray;
+    font-weight: 600;
+    margin-bottom: -2em;
+}
+
+
+.slide
+{
+    clear:both;
+    width:100%;
+    height:0px; 
+    overflow: hidden;
+    text-align: center;
+    transition: height .4s ease;
+}
+#touch1
+{
+    position: absolute; opacity: 0; height: 0px;
+
+}
+#touch2
+{
+    position: absolute; opacity: 0; height: 0px;
+
+}
+#touch3
+{
+    position: absolute; opacity: 0; height: 0px;
+
+}
+#touch4
+{
+    position: absolute; opacity: 0; height: 0px;
+
+}
+#touch5
+{
+    position: absolute; opacity: 0; height: 0px;
+
+}
+#touch6
+{
+    position: absolute; opacity: 0; height: 0px;
+
+}
+.dropdownlabel1
+{
+    padding-right: 10.2em;
+
+}
+.dropdownlabel2
+{
+    padding-right: 7.5em;
+
+}
+.dropdownlabel3
+{
+    padding-right: 7.8em;
+
+}
+.dropdownlabel4
+{
+    padding-right: 10.4em;
+
+}
+.dropdownlabel5
+{
+    padding-right: 9.7em;
+
+}
+.dropdownlabel6
+{
+    padding-right: 9.4em;
+
+}
+
+
+.Tables
+{
+    padding-top: 2em;
+    padding-left: 16.5em;
+    margin-right: 1.5em;
+    display: flex;
+    gap: 1.2em 1.4em;
+    flex-wrap: wrap;
+    margin-bottom: 4em;
+}
+
+.TablesAmount
+{
+    color: gray;
+    margin-left: 9em;
+    margin-top: .3em;
+    margin-bottom: -.5em;
+    font-size: 2em;
+    font-weight: 600;
+}
+
+.TableImage
+{
+    height: 14em;
+    width: 23em;
+    border-radius: 4%;
+}
+.TablesP
+{
+    padding-left: 0em;
+    padding-top: .4m;
+    padding-right: 2em;
+    font-size: 2em;
+}
+.FilterBar
+{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 15em;
+    background-color: #ddd;
+    height: 100%;
+    position: fixed;
+}
+.FilterUl
+{
+    list-style-type: none;
+
+}
+.ListItem
+{
+    display: block;
+
+}
+.descriptionFilterBar
+{
+    padding-top: .3em;
+    margin-left: -.5em;
+    margin-bottom: -.3em;
+    font-size: 2em;
+    font-weight: 600;
+}
+.DdOption
+{
+    display: flex;
+    text-align: center;
+    vertical-align: center;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: -.2em;
+}
+.DdOption p
+{
+    padding-right: 1em;
+    margin-bottom: 0.2em;
+}
+.OrdersFb 
+{
+    display: flex;
+    text-align: center;
+    vertical-align: center;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.TeamDd
+{
+    background-color: #ddd;
+
+}
+.DdHeader
+{
+    margin-left: -2em;
+    padding-left: 2em;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+.DdDate
+{
+    margin-right: .5em;
+
+}
+
+.arrow
+{
+    display: none;
+}
+
+
+.News
+{
+    margin-right: 3em;
+    margin-left: 3em;
+    padding-bottom: 3em;
+    padding-top: 3em;
+    margin-bottom: 3em;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    justify-content: left;
+    gap: 1em 2em;
+}
+.NewsBlock
+{
+    border-style: solid;
+    border-color: rgb(0, 0, 0);
+    border-radius: 4%;
+    border-width: .4em;
+    padding-bottom: 1em;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 30em;
+    max-width: 30em;
+}
+.Topic
+{
+    font-size: 2em;
+    display: inline-block;
+    padding-right: 2em;
+    padding-left: .5em;
+}
+.content
+{
+    text-align: justify;
+    padding-left: .8em;
+    padding-right: .8em;
+    padding-top: .5em;
+}
+.NewsBottom
+{
+    margin-top: auto;
+
+}
+.Date
+{
+    display: inline;
+    padding-left: .8em;
+}
+.Author
+{
+    display: inline;
+
+}
+.NewsID
+{
+    display: inline;
+
+}
+
+.vroom
+{
+    height: 4em;
+    bottom: 3.32em;
+    left: 30px;
+    position: fixed;
+    z-index: 2000;
+}
+
+.SKaRtoiletvroom
+{
+    height: 8em;
+    position: fixed;
+    left: 26em;
+    bottom: -5em;
+    transition-duration: 3s;
+    transition-timing-function: ease-in;
+}
+
+#POS
+{
+    bottom: 6em;
+    position: fixed;
+    z-index: 2001;
+}
+
+
+.AdminUl
+{
+    padding-top: 2em;
+    padding-right: 2em;
+}
+.AdminLi
+{
+    display: flex;
+    padding-bottom: 1em;
+    padding-right: 2em;
+}
+.AdminLiP
+{
+    display: flex;
+    padding-right: 2em;
+}
+.AdminLiInput
+{
+    display: flex;
+
+}
+.AdminLiButton
+{
+    display: inline;
+    margin-left: 1em;
+}
+
+
+#bg
+{
+    margin-left: 2em;
+    margin-right: 2em;
+    width: 16em;
+    margin-top: 5em;
+    padding: 1em 1em 1em 1em;
+    border: solid .5em black;
+    border-radius: 5%;
+    margin-bottom: 5em;
+}
+.LoginP
+{
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-top: 2em;
+    color: red;
+    font-size: 1.8em;
+}
+
+
+.NFa 
+{
+    color: black;
+
+}
+.NFa:hover
+{
+    color: black;
+
+}
+.NFa:visited
+{
+    color: black;
+
+}
+.NFp
+{
+    font-size: 1.4em;
+    padding-top: 2em;
+    padding-left: 2em;
+}
+
+.ImpressumInformation
+{
+    margin: 1em 1em 1em 1em;
+}
+
+@media only screen and (min-width: 1970px)
+{
+    .img-fluid
+    {
+        display: none;
+    }
+    .navimg
+    {
+        height: 2em;
+        padding-left: 1em;
+    }
+    .navbar-brand
+    {
+        display: none;
+    }
+    .navlogo-default-hidden
+    {
+        height: 2em;
+        padding-left: 1em;
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 1050px)
+{
+    .TeamBanner
+    {
+        max-width: 90%;
+
+    }
+    .TeamLogo
+    {
+        max-width: 90%;
+
+    }
+    .SocialmediaBlock
+    {
+        margin-left: .3em;
+
+    }
+    .SmUl
+    {
+        margin-left: -1.2em;
+
+    }
+
+    /* Burger Menu */
+
+    .nav-impressum
+    {
+        display: initial
+    }
+
+    #menu__toggle
+    {
+        display: block;
+        opacity: 0;
+    }
+
+    #menu__toggle:checked + .menu__btn > span
+    {
+        transform: rotate(45deg);
+    }
+
+    #menu__toggle:checked + .menu__btn > span::before
+    {
+        top: 0;
+        transform: rotate(0deg);
+    }
+    #menu__toggle:checked + .menu__btn > span::after
+    {
+        top: 0;
+        transform: rotate(90deg);
+    }
+    #menu__toggle:checked ~ .navbar-nav
+    {
+         left: 0 !important;
+    }
+
+    .menu__btn
+    {
+        display: block;
+        position: fixed;
+        top: 20px;
+        left: 9px;
+        width: 26px;
+        height: 26px;
+        cursor: pointer;
+        z-index: 3000;
+    }
+
+    .menu__btn > span,
+    .menu__btn > span::before,
+    .menu__btn > span::after
+    {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: #616161;
+        transition-duration: .25s;
+    }
+
+    .menu__btn > span::before
+    {
+        content: '';
+        top: -8px;
+    }
+    .menu__btn > span::after
+    {
+        content: '';
+        top: 8px;
+    }
+
+    .navbar-nav
+    {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 16em;
+        height: 100%;
+        margin: 0;
+        padding-top: 3.1em;
+        list-style: none;
+        background-color: #48cdff;
+        box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
+        transition-duration: .25s;
+        z-index: 2900;
+    }
+
+    .nav-item
+    {
+        display: block;
+        padding-left: .8em;
+        padding-bottom: .4em;
+        font-size: 20px;
+        font-weight: 600;
+        text-decoration: none;
+        transition-duration: .25s;
+    }
+
+    .nav-item:hover
+    {
+        background-color: #00bbff;
+    }
+
+    .nav-link
+    {
+        color: black;
+    }
+
+    .img-fluid
+    {
+        display: none;
+    }
+
+    .navimg
+    {
+        display: none;
+    }
+
+    .navbar
+    {
+        display: hidden;
+        background-color: white;
+    }
+    .container-fluid
+    {
+        padding-bottom: .8em;
+    }
+    .frzlogonavtables
+    {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 660px)
+{
+    .arrow
+    {
+        display: initial;
+        width: 2em;
+        margin-left: .45em;
+        position: fixed;
+        z-index: 200;
+        margin-top: .3em;
+        margin-left: .5em;
+        transition-duration: 0.25s;
+    }
+    .FilterBar
+    {
+        left: -100%;
+        transition-duration: 0.25s;
+    }
+    .Tables
+    {
+        padding-left: 1.5em;
+    }
+    .TablesAmount
+    {
+        margin-left: 2em;
+    }
+}
+
+@media only screen and (max-width: 420px)
+{
+    .TableImage
+    {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media only screen and (max-width: 340px)
+{
+    .MemberFlag
+    {
+        width: 100%;
+    }
+    .News
+    {
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+}
+
+@media only screen and (max-width: 390px)
+{
+    .about
+    {
+        margin-right: 1.3em;
+        margin-left: 1.3em;
+    }
+    .TeamUl
+    {
+        padding-left: -2.5em;
+        padding-right: -2.5em;
+    }
+    .Teams
+    {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media screen and (max-width: 550px) 
+{   
+    .NavItemImpressum
+    {
+        display: none;
+    }
+}
+
+@media (max-width:600px)
+{
+    .NewsBlock
+    {
+        max-width: 100%;
+        min-width: 100%
+    }
+    .TrennstrichHome
+    {
+        display: none;
+    }
+}
+
+@media (max-width: 315px)
+{
+    .Footline
+    {
+        display: none;
+    }
+    .vroom 
+    {
+         display: none;
+    }
+}
+
+@media (max-width: 322px)
+{
+    .Footerimg
+    {
+        height: 1.3em;   
+    }
+}
+
+
+@media screen and (max-height: 672px)
+{
+    .FilterBar
+    {
+        position: absolute;
+    }
+}
